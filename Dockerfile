@@ -61,22 +61,16 @@ RUN ls -l $SPACK_ROOT/var/spack/repos/builtin/packages/flexiblas
 # Install and test flexiblas via spack
 
 RUN . $SPACK_ROOT/share/spack/setup-env.sh && \
-      # create a new environment for the serial version and activate it:
-      spack env create flexiblas && \
-      spack env activate flexiblas && \
       # display specs of upcoming spack installation:
       spack spec flexiblas@${FLEXIBLAS_VERSION} && \
       # run the spack installation (adding it to the environment):
-      spack add flexiblas@${FLEXIBLAS_VERSION} && \
-      spack install && \
+      spack install flexiblas@${FLEXIBLAS_VERSION} && \
       # run spack smoke tests for flexiblas. We get an error if any of the fails:
       spack test run --alias test_serial flexiblas && \
       # display output from smoke tests (just for information):
       spack test results -l test_serial && \
       # show which flexiblas version we use (for convenience):
       spack load flexiblas && flexiblas --version && \
-      # deactivate the environment.
-      spack env deactivate
 
 
 # Provide bash in case the image is meant to be used interactively
