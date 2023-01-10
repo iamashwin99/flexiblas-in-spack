@@ -3,7 +3,7 @@ FROM debian:bullseye
 # # which spack version are we using now? Default is develop
 # # but other strings can be given to the docker build command
 # # (for example docker build --build-arg SPACK_VERSION=v0.16.2)
-ARG SPACK_VERSION=develop
+ARG SPACK_VERSION=releases/v0.18
 ARG FLEXIBLAS_VERSION=3.0.4
 RUN echo "Building with spack version ${SPACK_VERSION}"
 
