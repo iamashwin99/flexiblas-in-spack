@@ -70,7 +70,7 @@ RUN . $SPACK_ROOT/share/spack/setup-env.sh && \
       # display output from smoke tests (just for information):
       spack test results -l test_serial && \
       # show which flexiblas version we use (for convenience):
-      spack load flexiblas && flexiblas --version && \
+      spack load flexiblas && flexiblas --version
 
 
 # Provide bash in case the image is meant to be used interactively
