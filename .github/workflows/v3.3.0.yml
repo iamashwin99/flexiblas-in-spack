@@ -1,4 +1,4 @@
-name: spack-develop
+name: v303
 
 on:
   push:
